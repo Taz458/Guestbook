@@ -58,7 +58,7 @@ app.post("/guestbook", async (req, res) => {
 
 
 // Start the server
-app.listen(4242, () => {
-    console.log("App running on http://localhost:4242");
+app.listen(process.env.PORT || 4242, () => {
+    console.log(`App running on ${process.env.PORT || 4242}`);
 });
 

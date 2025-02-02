@@ -6,7 +6,7 @@ const reviewInput = document.getElementById("review");
 
 // Function to fetch guestbook entries from the server
 async function fetchGuestbook() {
-  const res = await fetch(`http://localhost:4242/guestbook`); // GET request to fetch guestbook data
+  const res = await fetch(`https://guestbook-1uqc.onrender.com/guestbook`); // GET request to fetch guestbook data
   const guestbookEntries = await res.json(); // Convert response to JSON
   displayGuestbook(guestbookEntries); // Call function to display entries
 }
@@ -44,7 +44,7 @@ function displayGuestbook(entries) {
 
 // Function to handle deleting a guestbook entry
 async function handleDelete(id) {
-  const res = await fetch(`http://localhost:4242/guestbook/${id}`, {
+  const res = await fetch(`https://guestbook-1uqc.onrender.com/guestbook/${id}`, {
     method: "DELETE", // Sends a DELETE request to remove the entry
   });
 
@@ -57,7 +57,7 @@ async function handleDelete(id) {
 form.addEventListener("submit", async (event) => {
   event.preventDefault(); // Prevents the page from refreshing when submitting
 
-  await fetch("http://localhost:4242/guestbook", {
+  await fetch("https://guestbook-1uqc.onrender.com/guestbook", {
     method: "POST", // Sends a POST request to server to add a new entry
     headers: { "Content-Type": "application/json" }, // Sends JSON data
     body: JSON.stringify({
